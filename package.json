@@ -11,7 +11,8 @@
     "build": "node scripts/build-data.mjs",
     "dev": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
-    "check": "npm run build && node --check public/ograder/app.js && node --check src/index.js && wrangler deploy --dry-run"
+    "check": "npm run build && node --check public/ograder/app.js && node --check src/index.js && wrangler deploy --dry-run",
+    "test": "npm run build && node --test test/*.test.mjs"
   },
   "devDependencies": {
     "wrangler": "4.163.0"

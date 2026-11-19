@@ -264,6 +264,8 @@ function addLatest(list){
   });
   if(added){renderTop();renderCount();hooks.forEach(function(f){f();});}
 }
+/* Pure functions, exposed for the unit tests in test/. */
+window.OGRADER={grade:grade,mix:mix,norm:norm,gradeLabel:gradeLabel,tierName:tierName,climbs:climbs,SCALES:SCALES};
 if(/^https?:$/.test(location.protocol)){
   fetch('latest.json').then(function(r){return r.ok?r.json():null;}).then(function(j){if(j&&j.ascents)addLatest(j.ascents);}).catch(function(){});
 }

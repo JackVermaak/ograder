@@ -25,6 +25,9 @@ jobs:
       # Builds data.js, checks both scripts parse and validates the Worker config.
       - run: npm run check
 
+      # Unit tests for the grading logic, the estimator and the Worker.
+      - run: npm test
+
       # Deploys only from main, and only once the two secrets are set.
       - name: Deploy to Cloudflare
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && env.CLOUDFLARE_API_TOKEN != ''
