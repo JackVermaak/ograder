@@ -71,7 +71,12 @@ export default {
     const cache = caches.default;
     const key = new Request(url.origin + "/ograder/latest.json");
     const hit = await cache.match(key);
-    if (hit) return hit;
+    if (hit) {
+      // Answers cached before the CORS header was added lack it, so set it on every hit.
+      const res = new Response(hit.body, hit);
+      res.headers.set("access-control-allow-origin", "*");
+      return res;
+    }
 
     let body;
     let maxAge = TTL;
