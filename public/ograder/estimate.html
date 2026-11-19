@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O-Grade Estimator for Any Climb | O-Grader</title>
+<meta name="description" content="Estimate the O-grade of any sport route, boulder or trad climb from its grade, based on Adam Ondra's real first-try rates and session counts.">
+<link rel="canonical" href="https://jackingtothemax.com/ograder/estimate">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="O-Grader">
+<meta property="og:url" content="https://jackingtothemax.com/ograder/estimate">
+<meta property="og:title" content="O-Grade Estimator for Any Climb | O-Grader">
+<meta property="og:description" content="Estimate the O-grade of any sport route, boulder or trad climb from its grade, based on Adam Ondra's real first-try rates and session counts.">
+<meta property="og:image" content="https://jackingtothemax.com/ograder/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317201d'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23ff7163' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark"><h1><a href="./"><span>O</span>-Grader</a></h1></div>
+    <nav aria-label="Pages"><a href="./">Logbook</a><a href="estimate" aria-current="page">Estimator</a><a href="about">About</a></nav>
+  </header>
+  <p class="lede">For climbs he hasn't done. Pick a grade and see what it would probably be for him.</p>
+
+  <section aria-labelledby="h-est">
+    <h2 id="h-est">Estimate a climb</h2>
+    <div class="form">
+      <label for="e-type">Discipline
+        <select id="e-type"><option value="S">Sport route</option><option value="B">Boulder</option><option value="T">Trad (E-grade)</option></select>
+      </label>
+      <label for="e-grade">Grade
+        <select id="e-grade"></select>
+      </label>
+      <label for="e-style">Terrain
+        <select id="e-style">
+          <option value="0">Neutral</option>
+          <option value="-1">His style (steep, kneebars, limestone)</option>
+          <option value="2">Anti-style (slab, grit, odd rock)</option>
+          <option value="5">Offwidth</option>
+        </select>
+      </label>
+    </div>
+    <div id="est"></div>
+    <p class="muted small"><a href="about">How the estimate works</a></p>
+  </section>
+
+  <section aria-labelledby="h-rate">
+    <h2 id="h-rate">Where O0 runs out</h2>
+    <p class="muted">His logged sport sends by grade, and the share he climbed first try (onsight or flash). This is what the sport estimate is built on.</p>
+    <div class="tablewrap"><table class="num">
+      <thead><tr><th>Grade</th><th class="r">Sends</th><th class="r">Onsight</th><th class="r">Flash</th><th class="r">Redpoint</th><th class="r">First try</th><th>Typical O-grade</th></tr></thead>
+      <tbody id="rate"></tbody>
+    </table></div>
+  </section>
+  <footer class="small muted">
+    <p>Unofficial. Not affiliated with Adam Ondra. <a href="about">About this site</a>.</p>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

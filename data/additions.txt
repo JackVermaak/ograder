@@ -1,0 +1,20 @@
+# Ascents to add on top of snapshot.txt. One per line:
+#
+#   type | name | crag | grade | year | code
+#
+# type   S = sport route, B = boulder, T = trad
+# crag   "Crag, Country" as it should appear on the site (may be left empty)
+# grade  French for sport (9a+), Font for boulders (8C), E-grade for trad (E10)
+# year   four digits, like 2026
+# code   how he did it:
+#          o    onsight              f    flash
+#          g2   second go (g3 = third go, and so on)
+#          s5   5 sessions           d5   5 days
+#          t7   7 tries in total     w    redpoint, sessions unknown
+#        add ! for his first ascent, for example s12!
+#
+# Climbs listed on climbing-history.org appear on the site by themselves
+# within a day; use this file for anything else, then run: npm run deploy
+#
+# Example (the leading # keeps it switched off):
+# S | Example Route | Flatanger, Norway | 9b | 2026 | s8!

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is an O-Grade? About the O-Grader</title>
+<meta name="description" content="What Adam Ondra's O-grades are, how the Wide Boyz scale works, how the O-Grader works out each climb, and where the data comes from.">
+<link rel="canonical" href="https://jackingtothemax.com/ograder/about">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="O-Grader">
+<meta property="og:url" content="https://jackingtothemax.com/ograder/about">
+<meta property="og:title" content="What Is an O-Grade? About the O-Grader">
+<meta property="og:description" content="What Adam Ondra's O-grades are, how the Wide Boyz scale works, how the O-Grader works out each climb, and where the data comes from.">
+<meta property="og:image" content="https://jackingtothemax.com/ograder/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317201d'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23ff7163' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark"><h1><a href="./"><span>O</span>-Grader</a></h1></div>
+    <nav aria-label="Pages"><a href="./">Logbook</a><a href="estimate">Estimator</a><a href="about" aria-current="page">About</a></nav>
+  </header>
+  <section aria-labelledby="h-what">
+    <h2 id="h-what">What an O-grade is</h2>
+    <div class="prose">
+      <p>The O stands for Ondra. Tom Randall and Pete Whittaker of the Wide Boyz came up with it as a joke when Adam Ondra visited their training cellar: stop asking how hard a climb is, and ask how hard it is for him. Anything he flashes is O0. Anything he does in one session is O1. Two sessions is O2, and so on.</p>
+      <p>Ondra liked it but thought O0 covered too much, from approach scrambles to limit onsights. So he extended the scale downward with minus grades for warm-ups, and added a plus or minus suffix for whether the ascent was a fight or casual. He then graded a few of his own climbs, which are the examples in the table.</p>
+      <p>The suffix is not a range. O-1+ reads as "O minus one, plus": a regular warm-up at the hard end of that step. O-1- would be the easy end.</p>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>O-grade</th><th>What it means for him</th><th>His examples</th></tr></thead>
+      <tbody id="scale"></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How this site grades a climb</h2>
+    <div class="prose">
+      <p>The <a href="./">logbook page</a> covers climbs he has done (<span id="stat"></span>). Each result carries a badge saying how solid it is:</p>
+      <ul>
+        <li><b>Ondra-stated.</b> He gave this O-grade himself.</li>
+        <li><b>Recorded.</b> The style, try count or session count is documented. An onsight or flash is O0 or lower, with the exact step taken from his own scale for that grade. A second-go send is O1-. A known session count is that number.</li>
+        <li><b>Logbook comment.</b> A day count parsed from his own comment on the ascent, so occasionally wrong.</li>
+        <li><b>Estimated.</b> He redpointed it, but nobody wrote down how many sessions it took. The site uses his typical session count for a redpoint at that grade.</li>
+      </ul>
+      <p>The <a href="estimate">estimator</a> is for climbs he hasn't done. It takes a grade and combines his first-try rate at that grade with his typical redpoint session count. Terrain shifts the grade before the lookup: his style counts as one grade easier, anti-style as two grades harder, and offwidth as five grades harder. Boulder and trad estimates are rougher, because his logged boulders lean toward his own first ascents and he has only nine recorded trad ascents.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-data">
+    <h2 id="h-data">Where the data comes from</h2>
+    <div class="prose">
+      <ul>
+        <li><b>Routes, boulders and ascent style:</b> his 8a.nu logbook, cross-checked against the list of routes he publishes at <a href="https://www.adamondra.com/list-of-routes">adamondra.com</a>.</li>
+        <li><b>Session counts and trad ascents:</b> <a href="https://climbing-history.org/climber/467/adam-ondra">climbing-history.org</a> and his own logbook comments.</li>
+        <li><b>First-try rates by grade:</b> his 8a.nu scorecard statistics.</li>
+        <li><b>Stated O-grades:</b> his own post about the scale, plus the Wide Boyz' original definition.</li>
+      </ul>
+      <p>The main snapshot was collected on 12 and 13 November 2026. Newer ascents listed on climbing-history.org are added automatically, usually within a day, and are marked as new.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-limits">
+    <h2 id="h-limits">Limits</h2>
+    <div class="prose">
+      <ul>
+        <li>8a.nu records style, not sessions. Session counts exist mostly for hard or notable ascents, so the model leans on a small sample at 9b and above.</li>
+        <li>A one-session send gets O1 whether it took two tries or twenty.</li>
+        <li>Ascents from his childhood are graded on the same scale. An 8a he redpointed at ten probably took longer than O1 suggests.</li>
+        <li>This is a joke taken seriously, not a ranking of anyone's climbing. The site is unofficial and not affiliated with Adam Ondra, the Wide Boyz, 8a.nu or climbing-history.org.</li>
+      </ul>
+    </div>
+  </section>
+  <footer class="small muted">
+    <p>Unofficial. Not affiliated with Adam Ondra. <a href="about">About this site</a>.</p>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

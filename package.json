@@ -1,0 +1,19 @@
+{
+  "name": "ograder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "O-Grader: every climb Adam Ondra has logged, graded by how many sessions it took him.",
+  "homepage": "https://jackingtothemax.com/ograder/",
+  "author": "Jack Vermaak",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-data.mjs",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "check": "npm run build && node --check public/ograder/app.js && node --check src/index.js && wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "4.163.0"
+  }
+}

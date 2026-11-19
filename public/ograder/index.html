@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O-Grader | Adam Ondra O-Grades for Every Climb</title>
+<meta name="description" content="The O-Grader (ograder) gives the O-grade of 2,400+ climbs Adam Ondra has done. O0 is a flash, O60 is Silence. Look up any route or boulder in his logbook.">
+<link rel="canonical" href="https://jackingtothemax.com/ograder/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="O-Grader">
+<meta property="og:url" content="https://jackingtothemax.com/ograder/">
+<meta property="og:title" content="O-Grader | Adam Ondra O-Grades for Every Climb">
+<meta property="og:description" content="The O-Grader (ograder) gives the O-grade of 2,400+ climbs Adam Ondra has done. O0 is a flash, O60 is Silence. Look up any route or boulder in his logbook.">
+<meta property="og:image" content="https://jackingtothemax.com/ograder/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"O-Grader","alternateName":["OGrader","Ograder","O Grader"],"url":"https://jackingtothemax.com/ograder/","applicationCategory":"SportsApplication","operatingSystem":"Any","description":"Look up the O-grade of any climb Adam Ondra has done. O-grades rate a rock climb by how many sessions it took Adam Ondra.","about":{"@type":"Person","name":"Adam Ondra"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317201d'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23ff7163' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark"><h1><a href="./"><span>O</span>-Grader</a></h1></div>
+    <nav aria-label="Pages"><a href="./" aria-current="page">Logbook</a><a href="estimate">Estimator</a><a href="about">About</a></nav>
+  </header>
+  <p class="lede">Every climb Adam Ondra has logged, graded by how much trouble it gave him. O0 means he did it first try. O60 means Silence.</p>
+
+  <div class="search">
+    <label for="q">Plug in a climb he has done</label>
+    <div class="row">
+      <input type="text" id="q" autocomplete="off" spellcheck="false" placeholder="Try Action Directe, Biographie, Dreamtime…" role="combobox" aria-expanded="false" aria-controls="sug" aria-autocomplete="list">
+      <button type="button" id="rand" class="ghost">Random climb</button>
+    </div>
+    <ul id="sug" class="sug" role="listbox" hidden></ul>
+    <p class="small muted" id="count" style="margin-top:8px"></p>
+  </div>
+
+  <div id="result" aria-live="polite"></div>
+
+  <section aria-labelledby="h-top">
+    <h2 id="h-top">Hardest for him</h2>
+    <p class="muted">Climbs with a known session count, highest first.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>O-grade</th><th>Climb</th><th>Grade</th><th>Basis</th></tr></thead>
+      <tbody id="top"></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-what">
+    <h2 id="h-what">What is an O-grade?</h2>
+    <div class="prose">
+      <p>An O-grade rates a rock climb by how hard it is for Adam Ondra. The Wide Boyz invented the scale and Ondra extended it: O0 is a climb he flashes, O1 takes him one session, O2 takes two, and Silence, the world's first 9c, is O60. Warm-ups get minus grades.</p>
+      <p>The O-Grader covers every sport route and boulder in his logbook. For a climb he hasn't done, <a href="estimate">estimate its O-grade from its grade</a>, or read <a href="about">how the O-grade scale works</a>.</p>
+    </div>
+  </section>
+  <footer class="small muted">
+    <p>Unofficial. Not affiliated with Adam Ondra. <a href="about">About this site</a>.</p>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  // O-Grader: static site in ./public plus a small script (src/index.js)
+  // that serves /ograder/latest.json with Ondra's newest ascents.
+  "name": "ograder",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  // Only reachable through the route below, so the daily cache always applies.
+  "workers_dev": false,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    { "pattern": "jackingtothemax.com/ograder*", "zone_name": "jackingtothemax.com" },
+    { "pattern": "www.jackingtothemax.com/ograder*", "zone_name": "jackingtothemax.com" },
+    // Lets search engines read robots.txt, which points them at the sitemap.
+    { "pattern": "jackingtothemax.com/robots.txt", "zone_name": "jackingtothemax.com" }
+  ]
+}
