@@ -1,6 +1,8 @@
 # O-Grader
 
-**Live at [jackvermaak.com/ograder](https://jackvermaak.com/ograder/)**
+**Live at [jackvermaak.com/ograder](https://jackvermaak.com/ograder/)**, and at
+[jackingtothemax.com/ograder](https://jackingtothemax.com/ograder/), where the Worker in this
+repository runs. Both serve the same pages and both pick up new ascents daily.
 
 [![Check and deploy](https://github.com/JackVermaak/ograder/actions/workflows/deploy.yml/badge.svg)](https://github.com/JackVermaak/ograder/actions/workflows/deploy.yml)
 [![licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
@@ -67,7 +69,13 @@ The site is a set of static pages served by a Cloudflare Worker.
 - `public/ograder/data.js` holds every ascent. It is built from the files in `data/`.
 - `src/index.js` adds one dynamic address, `/ograder/latest.json`. It fetches
   Ondra's newest ascents from climbing-history.org about once a day, and the
-  pages merge them in, so new hard sends appear without a redeploy.
+  pages merge them in, so new hard sends appear without a redeploy. It sends a
+  CORS header, so the copy on jackvermaak.com (a static Cloudflare Pages site with no
+  Worker) reads it from jackingtothemax.com.
+
+The pages' canonical address is jackingtothemax.com/ograder, so search engines index one copy.
+The jackvermaak.com copy is updated from this repository with `python3 tools/sync_ograder.py`
+in the [jackvermaak.com](https://github.com/JackVermaak/jackvermaak.com) repository.
 
 ```
 .

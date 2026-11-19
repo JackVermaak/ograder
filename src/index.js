@@ -53,7 +53,12 @@ async function load() {
 
 function json(body, maxAge) {
   return new Response(body, {
-    headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=" + maxAge },
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "public, max-age=" + maxAge,
+      // Public data: lets the copy of the site on jackvermaak.com/ograder read it too.
+      "access-control-allow-origin": "*",
+    },
   });
 }
 

@@ -266,7 +266,10 @@ function addLatest(list){
 }
 /* Pure functions, exposed for the unit tests in test/. */
 window.OGRADER={grade:grade,mix:mix,norm:norm,gradeLabel:gradeLabel,tierName:tierName,climbs:climbs,SCALES:SCALES};
+/* The Worker that serves latest.json runs on jackingtothemax.com. Copies of the site elsewhere
+   (jackvermaak.com/ograder) ask it directly; it allows that with a CORS header. */
+var LATEST=/(^|\.)jackingtothemax\.com$|^localhost$|^127\.0\.0\.1$/.test(location.hostname)?'latest.json':'https://jackingtothemax.com/ograder/latest.json';
 if(/^https?:$/.test(location.protocol)){
-  fetch('latest.json').then(function(r){return r.ok?r.json():null;}).then(function(j){if(j&&j.ascents)addLatest(j.ascents);}).catch(function(){});
+  fetch(LATEST).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j&&j.ascents)addLatest(j.ascents);}).catch(function(){});
 }
 })();
