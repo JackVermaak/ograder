@@ -6,7 +6,7 @@ O0 means he did it first try. O60 means Silence.
 **Live at [jackingtothemax.com/ograder](https://jackingtothemax.com/ograder/)**
 
 - **Logbook:** search 2,400+ of his sport routes, boulders and trad climbs and get each one's O-grade.
-- **Estimator:** pick a grade and terrain to estimate the O-grade of a climb he hasn't done.
+- **Estimator:** pick a grade and terrain to estimate the O-grade of a climb he has not done.
 - **About:** what O-grades are, how each one is worked out, and where the data comes from.
 
 ## What an O-grade is
